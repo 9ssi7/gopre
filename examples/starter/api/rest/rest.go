@@ -25,8 +25,8 @@ func (s srv) Listen() error {
 	restsrv := restsrv.New(s.app)
 	app := fiber.New(fiber.Config{
 		ErrorHandler:   restsrv.ErrorHandler(),
-		AppName:        "tarimhobi",
-		ServerHeader:   "tarimhobi",
+		AppName:        "starter",
+		ServerHeader:   "starter",
 		JSONEncoder:    json.Marshal,
 		JSONDecoder:    json.Unmarshal,
 		CaseSensitive:  true,
