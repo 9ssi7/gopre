@@ -1,6 +1,6 @@
-# HTTP API
+# Rest API
 
-This directory contains the implementation of the HTTP API for the application. The HTTP API provides a RESTful interface for clients to interact with the application over the HTTP protocol.
+This directory contains the implementation of the Rest API for the application. The Rest API provides a RESTful interface for clients to interact with the application over the HTTP protocol.
 
 ## Overview
 

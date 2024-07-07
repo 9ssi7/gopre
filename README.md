@@ -23,6 +23,7 @@ While the template promotes the use of CQRS, it is not mandatory. You can choose
 The project follows a standard Go project layout with the following key directories:
 
 * **`api`:** Contains the implementation of different API types (HTTP, GraphQL, gRPC, OpenAPI).
+* **`config`:** Contains configuration files for the application (environment variables, database settings, etc.).
 * **`cmd`:** Contains the main entry points for the application's services (cmdsrv, querysrv, or myapp).
 * **`internal`:** Contains the core application layers (application, domain, infrastructure).
 * **`pkg`:** Contains shared packages and modules used throughout the application.

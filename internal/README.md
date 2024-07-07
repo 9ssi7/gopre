@@ -6,9 +6,9 @@ This directory contains the core components of the application, structured accor
 
 The `internal` layer is divided into three main subdirectories:
 
-* **`application`:** This layer contains the application-specific logic, including command and query handlers. It acts as a mediator between the external API layer and the internal domain and infrastructure layers.
+* **`app`:** This layer contains the application-specific logic, including command and query handlers. It acts as a mediator between the external API layer and the internal domain and infrastructure layers.
 * **`domain`:** This layer encapsulates the core business logic of the application, including aggregates, entities, value objects, and domain events. It defines the language and rules of the business domain.
-* **`infrastructure`:** This layer provides the technical implementation details for interacting with external systems, such as databases, message queues, and external services.
+* **`infra`:** This layer provides the technical implementation details for interacting with external systems, such as databases, message queues, and external services.
 
 ## Subfolders
 
@@ -27,18 +27,17 @@ This subfolder contains the following subfolders:
 
 * **`aggregates`:** Contains the aggregate root entities, which are the primary building blocks of the domain model. Aggregates encapsulate related entities and value objects and ensure the consistency of the domain data.
 * **`entities`:** Contains the individual entities that make up the aggregates. Entities have their own identity and lifecycle, and they represent the core concepts of the domain.
+* **àbstracts`:** Contains abstract interfaces that define common behavior or contracts for domain objects.
 * **`valueobjects`:** Contains value objects, which are immutable objects that represent a specific value or concept in the domain (e.g., an address, a money amount, or a date range).
 * **`events`:** (If using CQRS) Contains the domain events that are emitted by aggregates when their state changes. These events are used to communicate changes between the command and query sides of the application.
 
-### `infrastructure`
+### `infra`
 
 This subfolder contains the following subfolders:
 
-* **`config`:** Contains the configuration management code for loading and accessing application settings.
 * **`messaging`:** (If using CQRS) Contains the messaging infrastructure for publishing and consuming domain events.
 * **`repositories`:** Contains the repositories that provide access to the underlying data storage (e.g., a database) for the domain objects.
-* **`seeds`:** (Optional) Contains data seeding scripts to populate the database with initial data.
-* **`migrations`:** (Optional) Contains database migration scripts to manage the evolution of the database schema.
+* **`db`:** Contains the database-specific implementation details, such as database schema definitions, migrations, and data access code.
 
 ## CQRS Considerations
 

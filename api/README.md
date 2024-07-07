@@ -7,7 +7,7 @@ This layer contains the various APIs through which the application interacts wit
 Each subfolder represents a different API type and contains the implementation details specific to that API:
 
 * **`cli`:** (If applicable) Contains the command-line interface (CLI) for interacting with the application. See the [`cli/README.md`](./cli/README.md) file for details.
-* **`http`:** Contains handlers and route definitions for RESTful APIs using the HTTP protocol. See the [`http/README.md`](./http/README.md) file for details.
+* **`rest`:** Contains handlers and route definitions for RESTful APIs using the HTTP protocol. See the [`rest/README.md`](./rest/README.md) file for details.
 * **`graphql`:** Contains GraphQL schema definitions and resolvers for the GraphQL API. See the [`graphql/README.md`](./graphql/README.md) file for details.
 * **`openapi`:** (If applicable) Contains OpenAPI (Swagger) specifications for documenting and generating client code for the RESTful APIs. See the [`openapi/README.md`](./openapi/README.md) file for details.
 * **`rpc`:** (If applicable) Contains gRPC service definitions (`*.proto` files) for the gRPC API. See the [`rpc/README.md`](./rpc/README.md) file for details.

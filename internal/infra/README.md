@@ -8,14 +8,6 @@ The `infrastructure` layer is responsible for providing the necessary adapters a
 
 ## Subfolders
 
-### `config`
-
-This subfolder contains the code responsible for managing application configuration. It typically includes:
-
-* **Configuration loading:** Reading configuration values from various sources, such as environment variables, configuration files (e.g., YAML, TOML, JSON), or a configuration server.
-* **Configuration validation:** Ensuring that the loaded configuration values are valid and consistent.
-* **Configuration access:** Providing a convenient interface for other parts of the application to access the configuration values.
-
 ### `messaging`
 
 (If using CQRS) This subfolder contains the implementation of the messaging infrastructure used to publish and consume domain events. It typically includes:
@@ -24,24 +16,23 @@ This subfolder contains the code responsible for managing application configurat
 * **Message consumer:** A component responsible for receiving domain events from the message broker and dispatching them to the appropriate event handlers.
 * **Error handling and retries:** Mechanisms to handle errors during message publishing or consumption and to retry failed operations.
 
-### `repositories`
+### `repos`
 
 This subfolder contains the implementations of the repositories that provide access to the underlying data storage for the domain objects. Repositories abstract away the details of the specific data storage technology (e.g., SQL database, NoSQL database, file system) and provide a consistent interface for the domain layer to interact with the data.
 
-### `seeds`
+### `db/seeds`
 
 (Optional) This subfolder contains data seeding scripts that can be used to populate the database with initial data for development or testing purposes.
 
-### `migrations`
+### `db/migrations`
 
 (Optional) This subfolder contains database migration scripts that are used to manage the evolution of the database schema over time. Migrations allow you to incrementally update the database schema in a controlled and reversible way.
 
 ## Database Interaction
 
-This project utilizes GORM as the ORM for database interactions. The `database` subfolder within `infrastructure` may contain:
+This project utilizes GORM as the ORM for database interactions. The `database` subfolder within `infra` may contain:
 
-* **`database.go`:**  Handles the database connection setup and configuration using GORM.
-* **`gorm_models.go`:** (Optional) Defines GORM-specific model structs that map to database tables if needed.
+* **`db/pg.go`:**  Handles the database connection setup and configuration using GORM.
 
 ## CQRS Considerations
 
