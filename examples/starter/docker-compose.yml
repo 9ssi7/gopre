@@ -1,0 +1,61 @@
+name: gopre-starter
+services:
+  starter-db:
+    image: "postgres:14.5"
+    container_name: "starter-db"
+    volumes:
+      - starter_data:/var/lib/postgresql/data
+    networks:
+      - starternetwork
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=starter
+      - POSTGRES_PASSWORD=starter
+      - POSTGRES_DB=starter
+
+  starter-redis:
+    image: "redis:latest"
+    container_name: "starter-redis"
+    ports:
+      - "6379:6379"
+    networks:
+      - starternetwork
+
+  starter-backend:
+    build:
+      dockerfile: ./Dockerfile.dev
+    container_name: "starter-backend"
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+    networks:
+      - starternetwork
+    ports:
+      - 4000:4000
+    secrets:
+      - starter_jwt_private_key
+      - starter_jwt_public_key
+    depends_on:
+      - starter-db
+      - starter-redis
+
+networks:
+  starternetwork:
+    name: starternetwork
+    driver: bridge
+    external: false
+
+volumes:
+  starter_data:
+    external: false
+  starter_web_modules:
+    external: false
+
+secrets:
+  starter_jwt_private_key:
+    file: ./starter_jwtRS256.key
+  starter_jwt_public_key:
+    file: ./starter_jwtRS256.key.pub

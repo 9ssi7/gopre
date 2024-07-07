@@ -1,0 +1,14 @@
+FROM golang:1.22-alpine
+RUN apk update && apk add --no-cache ca-certificates
+
+WORKDIR /app
+
+COPY go.* ./
+
+RUN go mod download
+
+COPY . .
+
+RUN go install github.com/air-verse/air@latest
+
+CMD ["air", "--build.cmd", "go build -o .temp/main ./cmd/srv/main.go", "--build.bin", "./.temp/main"]
