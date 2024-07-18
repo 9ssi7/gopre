@@ -57,8 +57,9 @@ func (r *RC) JSON(msgs ...string) map[string]interface{} {
 	return json
 }
 
-func (r *RC) SetData(data any) {
+func (r *RC) SetData(data any) *RC {
 	r.Data = data
+	return r
 }
 
 // Error is a function to return the message of the RC.
