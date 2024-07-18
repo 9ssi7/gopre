@@ -2,8 +2,6 @@
 
 **gopre** is a comprehensive Go project template designed to facilitate the development of robust and scalable applications using the principles of Domain-Driven Design (DDD) and the Command Query Responsibility Segregation (CQRS) architectural pattern. It provides a well-structured foundation for building complex applications with a focus on maintainability, testability, and adaptability.
 
-## If you are looking for a simple api using Go, Postgres, JWT and Docker, please check the [starter template](./examples/starter).
-
 ## Overview
 
 This template embodies a layered architecture that strictly adheres to DDD principles. It encourages a clear separation of concerns between the domain, application, and infrastructure layers, ensuring that the core business logic remains isolated from technical implementation details.
