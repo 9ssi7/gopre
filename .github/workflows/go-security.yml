@@ -1,0 +1,40 @@
+name: Run Go Security
+on:
+  schedule:
+    # weekly
+    - cron:  '0 0 * * 0'
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+        type: choice
+        options:
+          - info
+          - warning
+          - debug
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    env:
+      GO111MODULE: on
+      CI: "true"
+      GOPATH: ${{ github.workspace }}
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
+      - name: Install Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+      - name: Dependecy Load
+        run: go mod download
+        working-directory: ./
+      - name: Dependecy Vendor for gosec
+        run: go mod vendor
+        working-directory: ./
+      - name: Run Gosec Security Scanner
+        uses: securego/gosec@master
+        with:
+          args: -exclude-generated ./...
