@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome</title>
+    <style>
+      body,
+      div,
+      p,
+      a,
+      img,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font-family: Arial, sans-serif;
+        vertical-align: baseline;
+        line-height: 1.5;
+      }
+      @media only screen and (max-width: 600px) {
+        .container {
+          width: 100% !important;
+        }
+        .content {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body style="background-color: #f8f8f8">
+    <div class="container" style="max-width: 600px; margin: 0 auto">
+      <div
+        class="content"
+        style="
+          padding: 40px;
+          padding-top: 20px;
+          background-color: #ffffff;
+          border-top: 10px solid #3b82f6;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+        "
+      >
+        <p style="margin-top: 20px; margin-bottom: 20px">Hello {{ .Name }},</p>
+        <p>
+            Welcome to our app. Your account has been successfully created.
+        </p>
+        <p>
+        To verify your account, please click the button below.
+        </p>
+        <div style="text-align: center; margin-top: 20px">
+          <a
+            href="{{ .VerificationUrl }}"
+            style="
+              display: inline-block;
+              padding: 10px 20px;
+              background-color: #3b82f6;
+              color: #ffffff;
+              text-decoration: none;
+              border-radius: 5px;
+            "
+            >Verify Account</a
+          >
+      </div>
+      <p>
+        Also you can use the following url to verify your account:
+      </p>
+        <p>
+            <a href="{{ .VerificationUrl }}">{{ .VerificationUrl }}</a>
+        </p>
+    </div>
+    <div
+      class="footer"
+      style="text-align: center; font-size: 12px; padding: 20px"
+    >
+      <p>© 2024 9ssi7. All rights reserved.</p>
+    </div>
+  </body>
+</html>
