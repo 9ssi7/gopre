@@ -1,0 +1,47 @@
+# This workflow will build a golang project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-go
+
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build-test-cover:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.22'
+
+    - name: Build
+      run: go build -v ./...
+
+    - name: Test
+      run: go test -v ./...
+
+    - name: generate test coverage
+      run: go test ./... -coverprofile=./cover.out -covermode=atomic -coverpkg=./...
+
+    - name: check test coverage
+      uses: vladopajic/go-test-coverage@v2
+      with:
+        # Configure action using config file (option 1)
+        config: ./.testcoverage.yml
+        
+        # Configure action by specifying input parameters individually (option 2).
+        # If you are using config file (option 1) you shouldn't use these parameters, however
+        # specifing these action parameters will override appropriate config values.
+        profile: cover.out
+        local-prefix: github.com/9ssi7/gopre # TODO: Replace me on create repo from template
+        threshold-file: 80
+        threshold-package: 80
+        threshold-total: 95
+
