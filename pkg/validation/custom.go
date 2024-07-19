@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"regexp"
 
-	"github.com/YOUR-USER-OR-ORG-NAME/YOUR-REPO-NAME/pkg/currency"
+	"github.com/9ssi7/gopre/pkg/currency"
 	"github.com/go-playground/validator/v10"
 	"github.com/google/uuid"
 	"github.com/shopspring/decimal"

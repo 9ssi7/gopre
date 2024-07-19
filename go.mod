@@ -1,4 +1,4 @@
-module github.com/YOUR-USER-OR-ORG-NAME/YOUR-REPO-NAME
+module github.com/9ssi7/gopre
 
 go 1.22.0
 

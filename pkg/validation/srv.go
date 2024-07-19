@@ -4,8 +4,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/YOUR-USER-OR-ORG-NAME/YOUR-REPO-NAME/pkg/rescode"
-	"github.com/YOUR-USER-OR-ORG-NAME/YOUR-REPO-NAME/pkg/state"
+	"github.com/9ssi7/gopre/pkg/rescode"
+	"github.com/9ssi7/gopre/pkg/state"
 	"github.com/go-playground/locales/en"
 	"github.com/go-playground/locales/tr"
 	ut "github.com/go-playground/universal-translator"
