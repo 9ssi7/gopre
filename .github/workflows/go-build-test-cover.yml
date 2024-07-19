@@ -45,3 +45,8 @@ jobs:
         threshold-package: 80
         threshold-total: 95
 
+    - name: Send Coverage
+      uses: shogo82148/actions-goveralls@v1
+      with:
+        path-to-profile: cover.out
+
