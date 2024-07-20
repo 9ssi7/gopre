@@ -4,6 +4,7 @@ import (
 	"database/sql/driver"
 	"encoding/json"
 	"errors"
+	"fmt"
 
 	"github.com/google/uuid"
 )
@@ -12,12 +13,15 @@ type UUIDArray []uuid.UUID
 
 func (p UUIDArray) Value() (driver.Value, error) {
 	if len(p) == 0 {
+		fmt.Println("empty")
 		return nil, nil
 	}
 	data, err := json.Marshal(p)
 	if err != nil {
+		fmt.Println("err")
 		return nil, err
 	}
+	fmt.Println("no")
 	return string(data), nil
 }
 
