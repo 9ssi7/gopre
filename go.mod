@@ -2,6 +2,8 @@ module github.com/9ssi7/gopre
 
 go 1.22.0
 
+replace golang.org/x/net => golang.org/x/net v0.24.0
+
 require (
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
