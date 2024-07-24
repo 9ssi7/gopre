@@ -36,7 +36,7 @@ func TestNew(t *testing.T) {
 			status:  500,
 			message: "Internal Server Error",
 			err:     errors.New("database error"),
-			want:    &RC{Code: 500, Message: "Internal Server Error", StatusCode: 500, errors: []error{errors.New("database error")}},
+			want:    &RC{Code: 500, Message: "Internal Server Error", StatusCode: 500, err: errors.New("database error")},
 		},
 	}
 
@@ -56,7 +56,7 @@ func TestNew(t *testing.T) {
 			}
 
 			if tt.err != nil {
-				if rc.Error() != tt.err.Error() {
+				if rc.OriginalError().Error() != tt.err.Error() {
 					t.Errorf("New() error = %v, want %v", rc.Error(), tt.err.Error())
 				}
 			}
@@ -122,19 +122,19 @@ func TestRC_Error(t *testing.T) {
 	}{
 		{
 			name:    "With Message",
-			rc:      &RC{Message: "Error message"},
+			rc:      &RC{Message: "Error message", err: errors.New("Error message")},
 			wantErr: "Error message",
 		},
 		{
 			name:    "With Errors",
-			rc:      &RC{Message: "Error message", errors: []error{errors.New("underlying error")}},
+			rc:      &RC{Message: "Error message", err: errors.New("underlying error")},
 			wantErr: "underlying error",
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := tt.rc.Error(); err != tt.wantErr {
+			if err := tt.rc.OriginalError().Error(); err != tt.wantErr {
 				t.Errorf("Error() = %v, want %v", err, tt.wantErr)
 			}
 		})

@@ -1,5 +1,9 @@
 package rescode
 
+// any is a type alias for interface{}.
+// It is used to store any type of data.
+type R map[string]interface{}
+
 // RC is a struct that contains the code, message, http status, and translateable.
 // Code is the code of the error.
 type RC struct {
@@ -17,10 +21,10 @@ type RC struct {
 	Data any
 
 	// Error is the error of the error. (if the error is not nil)
-	errors []error
+	err error
 }
 
-type RcCreator func(err ...error) *RC
+type RcCreator func(err error) *RC
 
 // New is a function to create a new RC.
 func New(code uint64, status int, message string, data ...any) RcCreator {
@@ -28,13 +32,13 @@ func New(code uint64, status int, message string, data ...any) RcCreator {
 	if len(data) > 0 {
 		d = data[0]
 	}
-	return func(err ...error) *RC {
+	return func(err error) *RC {
 		return &RC{
 			Code:       code,
 			Message:    message,
 			Data:       d,
 			StatusCode: status,
-			errors:     err,
+			err:        err,
 		}
 	}
 }
@@ -62,10 +66,10 @@ func (r *RC) SetData(data any) *RC {
 	return r
 }
 
-// Error is a function to return the message of the RC.
 func (r *RC) Error() string {
-	if len(r.errors) > 0 {
-		return r.errors[0].Error()
-	}
-	return r.Message
+	return r.err.Error()
+}
+
+func (r *RC) OriginalError() error {
+	return r.err
 }
