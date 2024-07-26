@@ -43,15 +43,12 @@ gopre is well-suited for:
 * **Simple CRUD applications:** Where the overhead of CQRS and DDD might not be justified.
 * **Projects with tight deadlines:** Where the initial setup and learning curve of CQRS and DDD might be a constraint.
 
-## Getting Started
+## Examples
 
-1. Clone the repository.
-2. Open a terminal and navigate to the examples directory.
-3. Run the following command to start the application:
+This template not complete yet. Please check back later for 100% completion.
 
-```bash
-make run
-```
+- [`Teknasyon Banking (Future Idea)`](https://github.com/9ssi7/teknasyon.banking)
+- [`Starter (Old Version)`](https://github.com/9ssi7/gopre.examples/tree/main/starter)
 
 ## Contributing
 
