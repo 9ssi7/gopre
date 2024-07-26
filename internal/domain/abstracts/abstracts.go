@@ -26,6 +26,14 @@ type UserRepo interface {
 	Filter(ctx context.Context, req *list.PagiRequest, search string, isActive string) (*list.PagiResponse[*entities.User], error)
 }
 
+type RoleRepo interface {
+	TxnAdapterRepo
+
+	Save(ctx context.Context, role *entities.Role) error
+	FindById(ctx context.Context, id uuid.UUID) (*entities.Role, error)
+	Filter(ctx context.Context, req *list.PagiRequest, search string, isActive string) (*list.PagiResponse[*entities.Role], error)
+}
+
 type SessionRepo interface {
 	Save(ctx context.Context, userId uuid.UUID, session *aggregates.Session) error
 	FindByIds(ctx context.Context, userId uuid.UUID, deviceId string) (*aggregates.Session, bool, error)
