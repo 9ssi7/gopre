@@ -1,3 +1,6 @@
+# Warning: We do not recommend using it for now. It will receive a major update soon. For details: https://github.com/9ssi7/bank
+
+
 # gopre: A Go Project Template for CQRS and DDD
 
 **gopre** is a comprehensive Go project template designed to facilitate the development of robust and scalable applications using the principles of Domain-Driven Design (DDD) and the Command Query Responsibility Segregation (CQRS) architectural pattern. It provides a well-structured foundation for building complex applications with a focus on maintainability, testability, and adaptability.
