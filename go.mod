@@ -1,7 +1,7 @@
 module github.com/9ssi7/gopre
 
 go 1.22.0
-toolchain go1.23.7
+toolchain go1.24.1
 
 require (
 	github.com/9ssi7/txn v1.0.2
@@ -12,7 +12,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.5.1
 	github.com/google/uuid v1.6.0
 	github.com/lib/pq v1.10.9
-	github.com/redis/go-redis/v9 v9.7.1
+	github.com/redis/go-redis/v9 v9.7.3
 	github.com/shopspring/decimal v1.4.0
 	github.com/stretchr/testify v1.10.0
 	gorm.io/gorm v1.25.12
