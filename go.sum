@@ -1,5 +1,5 @@
-github.com/9ssi7/txn v1.0.2 h1:PjVRu8RBpIlfJjDFXZfq7HwIY44B7xBRTaPoRF1Vvfo=
-github.com/9ssi7/txn v1.0.2/go.mod h1:2c+CkwFU49XlJeNkamRBp0HQhsLDpXt+/kvaPJkgQ10=
+github.com/9ssi7/txn v1.0.4 h1:J09u6pP/hieSpfDQ89d/QGhmADGz2Lb/fVlQD+dAVrM=
+github.com/9ssi7/txn v1.0.4/go.mod h1:2c+CkwFU49XlJeNkamRBp0HQhsLDpXt+/kvaPJkgQ10=
 github.com/9ssi7/txn/txngorm v1.0.4 h1:MvLHwJa1PBCt5RwHc451DZJICIj594WVUJMjgfqs5uo=
 github.com/9ssi7/txn/txngorm v1.0.4/go.mod h1:xuXQE9pD3rJP3+9Szpcycg4qloG2NCxn2mvpgWyXCSs=
 github.com/DATA-DOG/go-sqlmock v1.5.2 h1:OcvFkGmslmlZibjAjaHm3L//6LiuBgolP7OputlJIzU=
