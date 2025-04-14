@@ -5,7 +5,7 @@ toolchain go1.24.1
 
 require (
 	github.com/9ssi7/txn v1.0.2
-	github.com/9ssi7/txn/txngorm v1.0.1
+	github.com/9ssi7/txn/txngorm v1.0.4
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.26.0
