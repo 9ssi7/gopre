@@ -16,7 +16,7 @@ require (
 	github.com/redis/go-redis/v9 v9.14.1
 	github.com/shopspring/decimal v1.4.0
 	github.com/stretchr/testify v1.11.1
-	gorm.io/gorm v1.31.0
+	gorm.io/gorm v1.31.1
 )
 
 require (
